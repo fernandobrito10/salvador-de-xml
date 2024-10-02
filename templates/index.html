@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivos Disponíveis para Download</title>
+</head>
+<body>
+    <h1>Arquivos ZIP disponíveis para download</h1>
+    <ul>
+        {% for file in files %}
+        <li>
+            <a href="/download/{{ file }}">{{ file }}</a>
+        </li>
+        {% else %}
+        <li>Nenhum arquivo disponível.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
