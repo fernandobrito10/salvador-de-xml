@@ -6,7 +6,7 @@ import os
 def selecionar_pasta():
     caminho_selecionado = filedialog.askdirectory()
     if caminho_selecionado:
-        caminho_txt = os.path.join(os.path.expanduser('~'), 'caminho_pasta.txt')
+        caminho_txt = os.path.join(os.path.expanduser('~'), 'caminho.txt')
         with open(caminho_txt, "w") as f:
             f.write(caminho_selecionado)
         

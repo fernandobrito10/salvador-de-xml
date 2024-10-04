@@ -1,6 +1,9 @@
 import zipfile
 import os
 from datetime import datetime, timedelta
+import getpass
+
+usuario = getpass.getuser()
 
 # Função para copiar arquivos e compactar apenas os que foram criados no mês passado
 def copy_and_compress(source_folder, output_zip):
@@ -26,7 +29,7 @@ def copy_and_compress(source_folder, output_zip):
 # Função principal de backup
 def backup_and_upload():
     try:
-        with open("caminho_pasta.txt", "r") as f:
+        with open(f"C:\\Users\\{usuario}\\caminho.txt", "r") as f:
             source_folder = f.read().strip()
     except FileNotFoundError:
         print("Erro: o arquivo com o caminho da pasta não foi encontrado.")
@@ -36,7 +39,7 @@ def backup_and_upload():
         print(f"Erro: a pasta {source_folder} não existe.")
         return
 
-    output_zip = f'C:\\Users\\Suporte F5\\Documents\\Fernando\\Salvador de XML\\uploads\\backup_{datetime.now().strftime("%Y%m%d")}.zip'
+    output_zip = f'C:\\Users\\Suporte F5\\Documents\\Fernando\\Salvador de XML\\uploads\\arquivos_{datetime.now().strftime("%m%Y")}.zip'
     
     # Copiar e compactar
     copy_and_compress(source_folder, output_zip)
